@@ -1,6 +1,6 @@
 from fastapi import APIRouter, FastAPI
 
-from .exercise import router as exercise_router
+from .exercise import exercise_router
 from .muscle import router as muscle_router
 from .recurrence import router as recurrence_router
 
