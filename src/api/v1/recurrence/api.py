@@ -9,5 +9,5 @@ router = SQLAlchemyCRUDRouter(
     create_schema=CreateRecurrence,
     db_model=RecurrenceModel,
     db=get_db,
-    prefix='recurrence',
+    prefix="recurrence",
 )

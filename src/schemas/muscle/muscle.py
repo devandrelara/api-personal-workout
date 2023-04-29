@@ -8,8 +8,10 @@ class BaseMuscle(BaseModel):
     name: str
     picture: Optional[str] = None
 
+
 class CreateMuscle(BaseMuscle):
     pass
+
 
 class Muscle(BaseMuscle):
     id: UUID

@@ -9,7 +9,7 @@ from ... import Base
 
 
 class Recurrence(Base):
-    __tablename__ = 'recurrences'
+    __tablename__ = "recurrences"
     id = Column(UUID(as_uuid=True), primary_key=True, default=lambda: str(uuid4()))
     name = Column(String(255))
 

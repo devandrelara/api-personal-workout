@@ -11,8 +11,10 @@ class BaseExercise(BaseModel):
     description: Optional[str] = None
     media: Optional[str] = None
 
+
 class CreateExercise(BaseExercise):
     pass
+
 
 class Exercise(BaseExercise):
     id: UUID

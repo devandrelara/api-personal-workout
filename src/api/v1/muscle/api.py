@@ -9,6 +9,5 @@ router = SQLAlchemyCRUDRouter(
     create_schema=CreateMuscle,
     db_model=MuscleModel,
     db=get_db,
-    prefix='muscle',
+    prefix="muscle",
 )
-
