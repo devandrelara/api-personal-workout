@@ -1,7 +1,6 @@
 from sqlalchemy.orm import Session, joinedload
 
 from ...models.exercise import Exercise as ExerciseModel
-from ...models.muscle import Muscle as MuscleModel
 from ...models.relations import ExerciseMuscle
 
 

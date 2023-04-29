@@ -1,16 +1,16 @@
-from uuid import uuid4
+# from uuid import uuid4
 
-from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+# from sqlalchemy import Column, ForeignKey
+# from sqlalchemy.dialects.postgresql import UUID
+# from sqlalchemy.orm import relationship
 
-Base = declarative_base()
+# from ... import Base
 
 
-class ExerciseSet(Base):
-    __tablename__ = "exercise_sets"
-    id = Column(Integer, primary_key=True, default=lambda: str(uuid4()))
-    exercise_id = Column(Integer, ForeignKey("exercises.id"))
-    exercise = relationship("Exercise", back_populates="sets")
-    set_id = Column(Integer, ForeignKey("sets.id"))
-    set = relationship("Set", back_populates="exercises")
+# class ExerciseSet(Base):
+#     __tablename__ = "exercise_sets"
+#     id = Column(UUID(as_uuid=True), primary_key=True, default=lambda: str(uuid4()))
+#     exercise_id = Column(UUID(as_uuid=True), ForeignKey("exercises.id"))
+#     exercise = relationship("Exercise", back_populates="sets")
+#     set_id = Column(UUID(as_uuid=True), ForeignKey("sets.id"))
+#     set = relationship("Set", back_populates="exercises")

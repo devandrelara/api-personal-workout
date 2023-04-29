@@ -1,8 +1,8 @@
 from fastapi_crudrouter import SQLAlchemyCRUDRouter
 
-from ....database.db import get_db
-from ....database.models.muscle import Muscle as MuscleModel
-from ....schemas.muscle import CreateMuscle, Muscle
+from src.database.db import get_db
+from src.database.models.muscle import Muscle as MuscleModel
+from src.schemas.muscle import CreateMuscle, Muscle
 
 router = SQLAlchemyCRUDRouter(
     schema=Muscle,

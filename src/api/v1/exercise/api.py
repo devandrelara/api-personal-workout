@@ -2,10 +2,10 @@ from fastapi import Depends, HTTPException
 from fastapi_crudrouter import SQLAlchemyCRUDRouter
 from sqlalchemy.orm import Session
 
-from ....database.db import get_db
-from ....database.models.exercise import Exercise as ExerciseModel
-from ....schemas.exercise import CreateExercise, Exercise
-from ....services import exercise as exercise_service
+from src.database.db import get_db
+from src.database.models.exercise import Exercise as ExerciseModel
+from src.schemas.exercise import CreateExercise, Exercise
+from src.services import exercise as exercise_service
 
 router = SQLAlchemyCRUDRouter(
     schema=Exercise,

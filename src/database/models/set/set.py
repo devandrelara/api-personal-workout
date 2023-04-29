@@ -1,17 +1,17 @@
-from uuid import uuid4
+# from uuid import uuid4
 
-from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+# from sqlalchemy import Column, String
+# from sqlalchemy.dialects.postgresql import UUID
+# from sqlalchemy.orm import relationship
 
-Base = declarative_base()
+# from ... import Base
 
 
-class Set(Base):
-    __tablename__ = "sets"
-    id = Column(Integer, primary_key=True, default=lambda: str(uuid4()))
-    repetitions = Column(
-        String
-    )  # or duration, depending on the application requirements
+# class Set(Base):
+#     __tablename__ = "sets"
+#     id = Column(UUID(as_uuid=True), primary_key=True, default=lambda: str(uuid4()))
+#     repetitions = Column(
+#         String
+#     )  # or duration, depending on the application requirements
 
-    exercises = relationship("ExerciseSet", back_populates="set")
+#     exercises = relationship("ExerciseSet", back_populates="set")

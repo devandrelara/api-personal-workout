@@ -1,8 +1,8 @@
 from fastapi_crudrouter import SQLAlchemyCRUDRouter
 
-from ....database.db import get_db
-from ....database.models.recurrence import Recurrence as RecurrenceModel
-from ....schemas.recurrence import CreateRecurrence, Recurrence
+from src.database.db import get_db
+from src.database.models.recurrence import Recurrence as RecurrenceModel
+from src.schemas.recurrence import CreateRecurrence, Recurrence
 
 router = SQLAlchemyCRUDRouter(
     schema=Recurrence,
