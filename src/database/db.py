@@ -1,11 +1,7 @@
-import os
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL", "postgresql://myuser:mypassword@db:5432/mydb"
-)
+DATABASE_URL = "postgresql://myuser:mypassword@db:5432/mydb"
 engine = create_engine(
     DATABASE_URL,
     pool_size=20,

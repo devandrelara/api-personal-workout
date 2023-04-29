@@ -17,4 +17,5 @@ class Exercise(Base):
     muscles = relationship(
         "Muscle", secondary="exercises_muscles", back_populates="exercises"
     )
+    sets = relationship("Set", secondary="sets_exercises", back_populates="exercices")
     # sets = relationship('ExerciseSet', back_populates='exercise')
