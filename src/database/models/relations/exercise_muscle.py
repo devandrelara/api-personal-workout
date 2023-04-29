@@ -1,9 +1,13 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
+
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+
 from ... import Base
+
+
 class ExerciseMuscle(Base):
     __tablename__ = 'exercises_muscles'
     id = Column(UUID(as_uuid=True), primary_key=True, default=lambda: str(uuid4()))

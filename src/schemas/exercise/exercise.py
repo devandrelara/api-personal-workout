@@ -1,7 +1,10 @@
-from pydantic import BaseModel
-from typing import Optional, List
+from typing import List, Optional
 from uuid import UUID
+
+from pydantic import BaseModel
+
 from ..muscle import Muscle
+
 
 class BaseExercise(BaseModel):
     name: str

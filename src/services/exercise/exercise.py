@@ -1,6 +1,9 @@
 from sqlalchemy.orm import Session
+
 from ...database.operations import exercise as exercise_operations
 from ...database.operations import muscle as muscle_operations
+
+
 def assign_muscle_to_exercise(db: Session, exercise_id: str, muscle_id: str):
     exercise = exercise_operations.get_exercise_by_id(db, exercise_id)
     muscle = muscle_operations.get_muscle_by_id(db, muscle_id)

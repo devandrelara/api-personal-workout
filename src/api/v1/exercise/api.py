@@ -1,10 +1,10 @@
-from ....database.db import get_db
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi_crudrouter import SQLAlchemyCRUDRouter
-from ....schemas.exercise import Exercise, CreateExercise
-from ....database.models.exercise import Exercise as ExerciseModel
 from sqlalchemy.orm import Session
+
 from ....database.db import get_db
+from ....database.models.exercise import Exercise as ExerciseModel
+from ....schemas.exercise import CreateExercise, Exercise
 from ....services import exercise as exercise_service
 
 router = SQLAlchemyCRUDRouter(

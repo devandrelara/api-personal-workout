@@ -1,7 +1,9 @@
-from .recurrence import router as recurrence_router
-from .muscle import router as muscle_router
-from .exercise import router as exercise_router
 from fastapi import APIRouter, FastAPI
+
+from .exercise import router as exercise_router
+from .muscle import router as muscle_router
+from .recurrence import router as recurrence_router
+
 app = FastAPI()
 router = APIRouter(prefix="/v1")
 

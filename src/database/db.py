@@ -1,9 +1,11 @@
+import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import os
-from .models.recurrence import Recurrence
-from .models.muscle import Muscle
+
 from .models.exercise import Exercise
+from .models.muscle import Muscle
+from .models.recurrence import Recurrence
 from .models.relations import ExerciseMuscle
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://myuser:mypassword@db:5432/mydb")

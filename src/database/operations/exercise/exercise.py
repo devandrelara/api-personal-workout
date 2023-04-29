@@ -1,8 +1,9 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
+
 from ...models.exercise import Exercise as ExerciseModel
 from ...models.muscle import Muscle as MuscleModel
 from ...models.relations import ExerciseMuscle
-from sqlalchemy.orm import joinedload
+
 
 def get_exercise_by_id(db: Session, exercise_id: str):
     return db.query(ExerciseModel).options(joinedload(ExerciseModel.muscles)).filter(ExerciseModel.id == exercise_id).first()
