@@ -15,7 +15,9 @@ class Exercise(Base):
     media = Column(String, nullable=True)
 
     muscles = relationship(
-        "Muscle", secondary="exercises_muscles", back_populates="exercises"
+        "Muscle",
+        secondary="exercises_muscles",
+        back_populates="exercises",
+        overlaps="exercise_muscles",
     )
-    sets = relationship("Set", secondary="sets_exercises", back_populates="exercices")
-    # sets = relationship('ExerciseSet', back_populates='exercise')
+    sets = relationship("Set", secondary="sets_exercises", back_populates="exercises")

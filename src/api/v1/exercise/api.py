@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from src.database.db import get_db
 from src.database.models.exercise import Exercise as ExerciseModel
-from src.schemas.exercise import CreateExercise, Exercise
+from src.schemas.exercise import CreateExercise, CreateSet, Exercise, Set
 from src.services import exercise as exercise_service
 
 exercise_router = SQLAlchemyCRUDRouter(
@@ -40,3 +40,17 @@ def assign_muscle_to_exercise(
             raise HTTPException(status_code=400, detail=error)
 
     return Response(status_code=201)
+
+
+@exercise_router.get("/set/{set_id}", response_model=Set)
+def get_exercises_set(set_id: str, db: Session = Depends(get_db)) -> Set:
+    set = exercise_service.get_exercises_set(db, set_id)
+    if not set:
+        raise HTTPException(status_code=404, detail="Set not found")
+
+    return set
+
+
+@exercise_router.post("/set", status_code=201, response_model=Set)
+def create_exercise_set(set_data: CreateSet, db: Session = Depends(get_db)) -> Set:
+    return exercise_service.create_set_of_exercises(db, set_data)

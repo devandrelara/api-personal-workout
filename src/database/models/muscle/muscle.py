@@ -14,6 +14,9 @@ class Muscle(Base):
     picture = Column(String)
 
     exercises = relationship(
-        "Exercise", secondary="exercises_muscles", back_populates="muscles"
+        "Exercise",
+        secondary="exercises_muscles",
+        back_populates="muscles",
+        overlaps="exercise_muscles",
     )
     # workouts = relationship('WorkoutMuscle', back_populates='muscle')

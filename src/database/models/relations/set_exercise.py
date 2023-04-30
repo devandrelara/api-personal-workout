@@ -13,5 +13,5 @@ class SetExercise(Base):
     exercise_id = Column(UUID(as_uuid=True), ForeignKey("exercises.id"))
     set_id = Column(UUID(as_uuid=True), ForeignKey("sets.id"))
 
-    exercise = relationship("Exercise", backref="sets")
-    set = relationship("Set", backref="set_exercises")
+    exercise = relationship("Exercise", backref="parent_sets")
+    set = relationship("Set", backref="assigned_exercises")

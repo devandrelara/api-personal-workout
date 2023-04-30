@@ -1,8 +1,8 @@
 """create set and join table
 
-Revision ID: aef3ab5a40a3
+Revision ID: 96be49b9b54c
 Revises: 3637c428ce9f
-Create Date: 2023-04-29 19:29:38.241703
+Create Date: 2023-04-29 19:47:36.878484
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'aef3ab5a40a3'
+revision = '96be49b9b54c'
 down_revision = '3637c428ce9f'
 branch_labels = None
 depends_on = None

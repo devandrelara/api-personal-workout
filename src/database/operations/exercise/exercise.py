@@ -1,7 +1,9 @@
+from uuid import UUID
+
 from sqlalchemy.orm import Session, joinedload
 
 from ...models.exercise import Exercise as ExerciseModel
-from ...models.relations import ExerciseMuscle
+from ...models.relations import ExerciseMuscle, SetExercise
 
 
 def get_exercise_by_id(db: Session, exercise_id: str):
@@ -45,3 +47,10 @@ def get_exercise_with_muscles(db: Session, exercise_id: str):
         .filter(ExerciseModel.id == exercise_id)
         .first()
     )
+
+
+def create_set_exercise_relation(db: Session, set_id: UUID, exercise_id: UUID):
+    new_relation = SetExercise(set_id=set_id, exercise_id=exercise_id)
+    db.add(new_relation)
+    db.flush()
+    return new_relation

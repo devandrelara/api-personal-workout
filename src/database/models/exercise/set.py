@@ -15,4 +15,3 @@ class Set(Base):
     exercises = relationship(
         "Exercise", secondary="sets_exercises", back_populates="sets"
     )
-    # sets = relationship("ExerciseGroupExercise", back_populates="exercise_group")
