@@ -15,3 +15,6 @@ class Set(Base):
     exercises = relationship(
         "Exercise", secondary="sets_exercises", back_populates="sets"
     )
+    set_blocks = relationship(
+        "SetBlock", secondary="set_blocks_sets", back_populates="sets"
+    )
