@@ -17,5 +17,5 @@ class Workout(Base):
     recurrence = relationship("Recurrence", back_populates="workouts")
 
     set_blocks = relationship(
-        "SetBlock", secondary="workout_set_blocks", back_populates="workouts"
+        "SetBlock", secondary="workouts_set_blocks", back_populates="workouts"
     )

@@ -11,7 +11,7 @@ class WorkoutSetBlock(Base):
     __tablename__ = "workouts_set_blocks"
     id = Column(UUID(as_uuid=True), primary_key=True, default=lambda: str(uuid4()))
     set_block_id = Column(UUID(as_uuid=True), ForeignKey("set_blocks.id"))
-    workout_id = Column(UUID(as_uuid=True), ForeignKey("sets.id"))
+    workout_id = Column(UUID(as_uuid=True), ForeignKey("workouts.id"))
 
     set_block = relationship("SetBlock", backref="parent_workout")
     workout = relationship("Workout", backref="assigned_set_blocks")
