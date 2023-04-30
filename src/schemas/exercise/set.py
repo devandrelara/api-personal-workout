@@ -9,6 +9,7 @@ from .exercise import Exercise
 class BaseSet(BaseModel):
     reps: str
     description: Optional[str] = None
+    index: Optional[int] = None
 
 
 class CreateSet(BaseSet):

@@ -6,7 +6,12 @@ from .exercise import (
     get_exercise_muscle_relations,
     get_exercise_with_muscles,
 )
-from .set import create_set_block_set_relation, create_set_block, create_set
+from .set import (
+    create_set_block_set_relation,
+    create_set_block,
+    create_set,
+    update_set_index,
+)
 
 __all__ = [
     "get_exercise_by_id",
@@ -18,4 +23,5 @@ __all__ = [
     "create_set",
     "create_set_block",
     "create_set_block_set_relation",
+    "update_set_index",
 ]
