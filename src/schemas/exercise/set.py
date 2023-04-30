@@ -21,3 +21,21 @@ class Set(BaseSet):
 
     class Config:
         orm_mode = True
+
+
+class BaseSetBlock(BaseModel):
+    description: Optional[str] = None
+    rest_interval: int
+    index: int
+
+
+class CreateSetBlock(BaseSetBlock):
+    sets: List[UUID]
+
+
+class SetBlock(BaseSetBlock):
+    id: UUID
+    sets: List[Set]
+
+    class Config:
+        orm_mode = True
