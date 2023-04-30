@@ -15,3 +15,6 @@ class SetBlock(Base):
     description = Column(String)
 
     sets = relationship("Set", secondary="set_blocks_sets", back_populates="set_blocks")
+    workouts = relationship(
+        "Workout", secondary="workouts_set_blocks", back_populates="set_blocks"
+    )

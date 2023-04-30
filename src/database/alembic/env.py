@@ -7,7 +7,13 @@ from src.database import Base
 from src.database.models.exercise import Exercise, Set
 from src.database.models.muscle import Muscle
 from src.database.models.recurrence import Recurrence
-from src.database.models.relations import ExerciseMuscle, SetExercise, SetBlockSet
+from src.database.models.workout import Workout
+from src.database.models.relations import (
+    ExerciseMuscle,
+    SetExercise,
+    SetBlockSet,
+    WorkoutSetBlock,
+)
 
 config = context.config
 

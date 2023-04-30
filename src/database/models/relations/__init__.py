@@ -2,8 +2,9 @@
 from .exercise_muscle import ExerciseMuscle
 from .set_exercise import SetExercise
 from .set_blocks_sets import SetBlockSet
+from .workout_set_block import WorkoutSetBlock
 
 # from .exercise_set import ExerciseSet
 # from .workout_muscle import WorkoutMuscle
 
-__all__ = ["ExerciseMuscle", "SetExercise", "SetBlockSet"]
+__all__ = ["ExerciseMuscle", "SetExercise", "SetBlockSet", "WorkoutSetBlock"]
